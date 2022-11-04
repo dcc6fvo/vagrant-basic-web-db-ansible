@@ -4,12 +4,11 @@ vagrant-basico-web-db
 Installation && Running
 -----------------------
 
-With git:
+Do a git clone of the project:
 
-    git clone https://github.com/rodjek/vim-puppet.git ~/.vim/pack/plugins/start/vim-puppet
+    git clone https://github.com/dcc6fvo/vagrant-basico-web-db.git
 
-Running:
+Access the newly created folder with the git clone command and type the following command:
 
-	  cd/
 		vagrant up
 
