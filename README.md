@@ -3,9 +3,9 @@ vagrant-basico-web-db
 
 Prerequisites
 -----------------------
-Vagrant
+Vagrant and virtualbox are both essential and can be easily installed on ubuntu/debian like distro:
 
-	apt-get install vagrant
+	sudo apt-get install virtualbox && sudo apt-get install vagrant
 
 
 Installation && Running
