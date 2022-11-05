@@ -1,6 +1,8 @@
 vagrant-basico-web-db
 ==========
 
+This is a simple vagrant configuration that provides 02 virtual machines, one with nginx+php and another with mysql database. Don't forget to create/use another SSH private key.
+
 Prerequisites
 -----------------------
 Vagrant and virtualbox are both essential and can be easily installed on ubuntu/debian like distro:
