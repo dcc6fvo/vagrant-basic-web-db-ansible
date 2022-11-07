@@ -1,0 +1,36 @@
+- hosts: webserver 
+  handlers:
+    - name: restart nginx
+      service:
+        name: nginx
+        state: restarted
+      become: yes
+
+  tasks:
+    - name: 'Instalar Nginx Server & PHP'
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600 #1 hora
+        name: ["nginx", "php7.2", "php7.2-mysql", "php7.2-fpm"]
+        state: latest
+      become: yes
+
+    - name: Copy content of directory 'files'
+      copy:
+       src: /vagrant/src/    # note the '/' <-- !!!
+       dest: /var/www/html
+       owner: www-data
+       group: www-data
+       mode: 0644
+      become: yes
+
+    - name: 'Copiar arquivo default do nginx'
+      copy:
+        src: /vagrant/configs/default
+        dest: /etc/nginx/sites-available/default
+        owner: root
+        group: root
+        mode: 0644
+      become: yes
+      notify:
+        - restart nginx
