@@ -1,2 +1,2 @@
-- include: playbook-mysqld.yml
-- include: playbook-web.yml
+- import_playbook: playbook-mysqld.yml
+- import_playbook: playbook-web.yml

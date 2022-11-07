@@ -8,6 +8,12 @@ Vagrant.configure("2") do |config|
         #Config a imagem que vai ser usada
         mysql.vm.box = "ubuntu/bionic64"
 
+        mysql.vm.provider "virtualbox" do |vb|
+            vb.memory = 512
+            vb.cpus = 1
+            vb.name = "ubuntu_bionic_mysqld"
+        end
+
         #Config o nome do host
         mysql.vm.hostname = "mysqld"
 
@@ -37,7 +43,13 @@ Vagrant.configure("2") do |config|
   
         #Config a imagem que vai ser usada
         web.vm.box = "ubuntu/bionic64"
-  
+
+        web.vm.provider "virtualbox" do |vb|
+            vb.memory = 1024
+            vb.cpus = 2
+            vb.name = "ubuntu_bionic_web"
+        end
+        
         web.vm.hostname = "nginx"
 
         #Redirecionando porta do host para guest
@@ -58,6 +70,13 @@ Vagrant.configure("2") do |config|
      
         #Config a imagem que vai ser usada
         ansible.vm.box = "ubuntu/bionic64"
+        
+        #Config para o virtualbox
+        ansible.vm.provider "virtualbox" do |vb|
+            vb.memory = 512
+            vb.cpus = 1
+            vb.name = "ubuntu_bionic_ansible"
+        end
 
         ansible.vm.hostname = "ansible"
 
@@ -69,7 +88,7 @@ Vagrant.configure("2") do |config|
                      apt-get install -y software-properties-common && \
                      apt-add-repository --yes --update ppa:ansible/ansible && \
                      apt-get install -y ansible"
-   
+  
         #Config de pasta compartilhada
         ansible.vm.synced_folder "./configs", "/configs"
 
