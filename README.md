@@ -1,7 +1,9 @@
 vagrant-basico-web-db
 ==========
 
-This is a simple vagrant configuration that provides 02 virtual machines, one with nginx+php and another with mysql database. Don't forget to create/use another SSH private key.
+This is a simple vagrant configuration that provides 03 virtual machines: one with nginx and php, another with MySQL database and finally, the management machine with ansible software. Don't forget to create/use another SSH private key.
+
+There is aa puppet + vagrant configuration version with the "puppet" branch.
 
 Prerequisites
 -----------------------
@@ -21,3 +23,6 @@ Access the newly created folder with the git clone command and type the followin
 
 	vagrant up
 
+To forcible destroy all the configurations:
+
+	vagrant detroy -f
