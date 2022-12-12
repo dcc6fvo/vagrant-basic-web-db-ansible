@@ -3,7 +3,7 @@ vagrant-basic-web-db-ansible
 
 This is a simple vagrant configuration that provides 03 virtual machines: one with nginx and php, another with MySQL database and finally, the management machine with ansible software. Don't forget to create/use another SSH private key.
 
-There is aa puppet + vagrant configuration version with the "puppet" branch.
+There is a puppet + vagrant configuration version with the "puppet" branch.
 
 Prerequisites
 -----------------------
